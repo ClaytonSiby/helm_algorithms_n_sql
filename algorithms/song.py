@@ -1,5 +1,5 @@
 class Song:
-    song_names = set()
+    SONG_NAMES = set()
     def __init__(self, name):
         self.name = name
         self.next = None
@@ -14,9 +14,9 @@ class Song:
         if self.next is None:
             return False
 
-        if self.name in Song.song_names:
+        if self.name in Song.SONG_NAMES:
             return True
         else:
-            Song.song_names.add(self.name)
+            Song.SONG_NAMES.add(self.name)
         
         return self.next.is_repeating_playlist()
