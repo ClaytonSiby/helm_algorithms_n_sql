@@ -59,3 +59,10 @@ print(contains(n2, 5)) # false
 - `source .venv/bin/activate` <br />
 - `pip install -r requirements.txt` <br />
 - `pytest` <br />
+
+**Project Structure**
+
+- all the algorithms are in `/algorithms` directory
+- all the tests are defined in `/tests`
+
+- **NB** make sure your virtual environment is well set and is activated, please refer to the setup instrucitons above
