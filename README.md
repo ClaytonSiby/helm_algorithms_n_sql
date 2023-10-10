@@ -64,5 +64,6 @@ print(contains(n2, 5)) # false
 
 - all the algorithms are in `/algorithms` directory
 - all the tests are defined in `/tests`
+- the sql stuff is in the `/sql` directory
 
 - **NB** make sure your virtual environment is well set and is activated, please refer to the setup instrucitons above
