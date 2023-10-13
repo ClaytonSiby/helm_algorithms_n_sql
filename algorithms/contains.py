@@ -1,8 +1,7 @@
-
-import collections
-Node = collections.namedtuple('Node', ['value', 'left', 'right'])
-
 def contains(node, value):
+    """
+    :return : (bool) True if the node contains the value, False otherwise
+    """
     if node is None:
         return False
     if node.value == value:
