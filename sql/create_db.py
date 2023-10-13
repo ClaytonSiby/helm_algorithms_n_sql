@@ -16,7 +16,7 @@ def insert_records(db_cursor):
 
     db_cursor.executemany(insert_query, generate_random_data())
 
-def create_db_and_insert_records():
+def create_db_and_insert_records(table_name):
     connect = psycopg2.connect(
         database='postgres',
         user='postgres',
@@ -29,8 +29,8 @@ def create_db_and_insert_records():
 
     try:
         cursor.execute(
-        """
-            CREATE TABLE IF NOT EXISTS enrollments (
+        f"""
+            CREATE TABLE IF NOT EXISTS {table_name} (
                 id INTEGER NOT NULL PRIMARY KEY,
                 year INTEGER NOT NULL,
                 studentId INTEGER NOT NULL

@@ -1,7 +1,7 @@
 import psycopg2
 from create_db import create_db_and_insert_records
 
-create_db_and_insert_records()
+create_db_and_insert_records('enrollments')
 
 def update_faulty_records():
     """
@@ -38,4 +38,4 @@ def update_faulty_records():
         connect.close()
         print("Connection closed! 🔥")
 
-update_faulty_records()
+# update_faulty_records()
