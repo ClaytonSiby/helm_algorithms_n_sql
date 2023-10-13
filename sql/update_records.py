@@ -1,6 +1,9 @@
 import psycopg2
+from create_db import create_db_and_update_records
 
-def update_records():
+create_db_and_update_records()
+
+def update_faulty_records():
     """
     TABLE enrollments
     id INTEGER NOT NULL PRIMARY KEY
@@ -22,15 +25,17 @@ def update_records():
     try:
         cursor.execute(
         """
-            CREATE TABLE IF NOT EXISTS enrollments (
-                id INTEGER NOT NULL PRIMARY KEY,
-                year INTEGER NOT NULL,
-                studentId INTEGER NOT NULL
-            )
+            UPDATE enrollments
+            SET year = 2015
+            WHERE id BETWEEN 20 AND 100
         """
         )
 
         connect.commit()
+        print("Records updated successfully! ✅")
     finally:
         cursor.close()
         connect.close()
+        print("Connection closed! 🔥")
+
+update_faulty_records()
