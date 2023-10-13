@@ -43,6 +43,37 @@ print(contains(n2, 3)) # true
 print(contains(n2, 5)) # false
 ```
 
+3. <h4>SQL CHALLENGE 1</h4>
+
+<h6>
+  A table containing the students enrolled in a yearly course has incorrect data in records with ids between 20 and 100 (inclusive).
+</h6>
+
+```
+  TABLE enrollments
+  id INTEGER NOT NULL PRIMARY KEY
+  year INTEGER NOT NULL
+  studentId INTEGER NOT NULL
+```
+
+<ins>Write a query that updates the field (year) of every faulty record of 2015</ins>
+
+4. <h4>SQL CHALLENT 2</h4>
+
+<h6>
+  App usage data are kept in the following table:
+</h6>
+
+```
+  TABLE sessions
+  id INTEGER PRIMARY KEY,
+  userId INTEGER NOT NULL,
+  duration DECIMAL NOT NULL
+```
+
+<ins>Write a query that selects userId and average session duration for each user who has more than one session.</ins>
+
+
 **Requirements**
 - Python
 - Pytest
