@@ -1,7 +1,7 @@
 import psycopg2
-from create_db import create_db_and_update_records
+from create_db import create_db_and_insert_records
 
-create_db_and_update_records()
+create_db_and_insert_records()
 
 def update_faulty_records():
     """

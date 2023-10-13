@@ -16,7 +16,7 @@ def insert_records(db_cursor):
 
     db_cursor.executemany(insert_query, generate_random_data())
 
-def create_db_and_update_records():
+def create_db_and_insert_records():
     connect = psycopg2.connect(
         database='postgres',
         user='postgres',
