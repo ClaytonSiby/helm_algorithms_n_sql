@@ -16,18 +16,6 @@ def insert_session_records(db_cursor):
 
     db_cursor.executemany(insert_query, generate_random_session_data())
 
-def calc_average_session_duration(db_cursor):
-    db_cursor.execute(
-    """
-        SELECT "userId", AVG(duration) AS average_session_duration
-        FROM sessions
-        GROUP BY "userId"
-        HAVING AVG(duration) > 1
-    """
-    )
-
-    print('Records updated successfully! ✅')
-
 def average_session_duration():
     connect = psycopg2.connect(
         database='postgres',
@@ -52,12 +40,23 @@ def average_session_duration():
 
         insert_session_records(cursor)
         
-        calc_average_session_duration(cursor)
         connect.commit()
         print("Records inserted successfully! ✅")
     finally:
         cursor.close()
         connect.close()
         print("Connection closed! 🔥")
-    
+
 average_session_duration()
+
+def calc_average_session_duration(db_cursor):
+    db_cursor.execute(
+    """
+        SELECT "userId", AVG("duration") AS average_session_duration
+        FROM sessions
+        GROUP BY "userId"
+        HAVING AVG("duration") > 1
+    """
+    )
+
+    print('Records updated successfully! ✅')
